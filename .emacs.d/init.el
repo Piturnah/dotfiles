@@ -169,5 +169,12 @@
 (setq TeX-parse-self t)
 (setq-default TeX-master nil)
 
+;; Custom keybinding `C-0 b` for `\mathbb{}` on prev letter
+(fset 'pit/mathbb
+(kmacro-lambda-form [?\C-b ?\\ ?m ?a ?t ?h ?b ?b ?\{ ?\C-f ?\}] 0 "%d"))
+(add-hook 'LaTeX-mode-hook
+          (lambda () (local-set-key (kbd "C-0 b") #'pit/mathbb)))
+
+
 (provide 'init)
 ;;; init.el ends here
