@@ -178,12 +178,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3status -c ~/.config/i3/i3status.conf
-}
-
 bindsym $mod+shift+x exec i3lock
 
 # Media player controls
@@ -201,10 +195,56 @@ bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewi
 
 
 # Clipboard Screenshots
-bindsym Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
-bindsym $mod+Print exec --no-startup-id maim --window ${xdotool getactivewindow} | xclip -selection clipboard -t image/png
+bindsym Print exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
+bindsym $mod+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 
 focus_follows_mouse no
 
 # Use fcitx
 exec --no-startup-id fcitx -d
+
+set $tx     #040404
+set $ia     #8f8f8f
+
+# Gruber-darker colours taken from https://github.com/rexim/gruber-darker-theme/blob/master/gruber-darker-theme.el
+set $gd-fg        #e4e4ef
+set $gd-fg+1      #f4f4ff
+set $gd-fg+2      #f5f5f5
+set $gd-white     #ffffff
+set $gd-black     #000000
+set $gd-bg-1      #101010
+set $gd-bg        #181818
+set $gd-bg+1      #282828
+set $gd-bg+2      #453d41
+set $gd-bg+3      #484848
+set $gd-bg+4      #52494e
+set $gd-red-1     #c73c3f
+set $gd-red       #f43841
+set $gd-red+1     #ff4f58
+set $gd-green     #73c936
+set $gd-yellow    #ffdd33
+set $gd-brown     #cc8c3c
+set $gd-quartz    #95a99f
+set $gd-niagara-2 #303540
+set $gd-niagara-1 #565f73
+set $gd-niagara   #96a6c8
+set $gd-wisteria  #9e95c7
+
+# set some nice colors      border		background		text		indicator
+client.focused              $gd-niagara-2	$gd-niagara-2         	$gd-white	$gd-brown
+client.unfocused            $gd-bg-1        	$gd-bg-1         	$ia
+client.focused_inactive     $gd-bg-1        	$gd-bg-1         	$gd-niagara-1
+client.urgent               $gd-red     	$gd-red         	$tx
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        status_command i3status -c ~/.config/i3/i3status.conf
+
+	colors {
+                background          $gd-bg-1
+                statusline          $gd-fg
+                focused_workspace   $gd-niagara-1        $gd-niagara-1		$tx
+	        urgent_workspace    $gd-white        	 $gd-red               	$gd-white
+    }
+} 
