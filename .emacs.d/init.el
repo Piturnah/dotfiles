@@ -20,6 +20,7 @@
 (require 'bind-key)
 (setq use-package-always-ensure t)
 
+(use-package smex)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 ;; Old M-x
@@ -31,25 +32,8 @@
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (ido-mode 1)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
- '(custom-enabled-themes '(gruber-darker))
- '(custom-safe-themes
-   '("3d2e532b010eeb2f5e09c79f0b3a277bfc268ca91a59cdda7ffd056b868a03bc" "c8b83e7692e77f3e2e46c08177b673da6e41b307805cd1982da9e2ea2e90e6d7" default))
- '(frame-brackground-mode 'dark)
- '(package-selected-packages
-   '(projectile auctex prettier company rjsx-mode tide web-mode yasnippet flycheck multiple-cursors mozc scss-mode magit gruber-darker-theme typescript-mode vue-mode company-lsp lsp-mode haskell-mode monokai-pro-theme smex)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(use-package gruber-darker-theme)
+
 (put 'upcase-region 'disabled nil)
 
 ;; Multiple cursors
@@ -58,10 +42,11 @@
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 (put 'downcase-region 'disabled nil)
 
-(require 'lsp-mode)
-
 (use-package lsp-mode
+  :ensure t
   :commands lsp)
+
+(require 'lsp-mode)
 
 ;; for completions
 ;;(use-package company-lsp
@@ -92,6 +77,7 @@
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode)
 
+(use-package flycheck)
 (global-flycheck-mode)
 
 ;; auto revert files on change
@@ -101,13 +87,20 @@
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
 
+(use-package rjsx-mode)
 (require 'rjsx-mode)
+(use-package typescript-mode)
 (require 'typescript-mode)
+(use-package web-mode)
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+(use-package tide)
 (require 'tide)
+(use-package company)
 (require 'company)
+(use-package yasnippet)
 (require 'yasnippet)
+(use-package prettier)
 (require 'prettier)
 
  ;; tide def func: (https://dev.to/viglioni/how-i-set-up-my-emacs-for-typescript-3eeh)
@@ -163,6 +156,8 @@
 (add-hook 'scss-mode-hook 'prettier-mode)
 
 ;; AUCTeX
+(use-package tex
+	     :ensure auctex)
 (require 'tex-site)
 
 (setq TeX-auto-save t)
@@ -175,6 +170,30 @@
 (add-hook 'LaTeX-mode-hook
           (lambda () (local-set-key (kbd "C-0 b") #'pit/mathbb)))
 
+(use-package magit)
+(use-package multiple-cursors)
+(use-package vue-mode)
+(use-package haskell-mode)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
+ '(custom-enabled-themes '(gruber-darker))
+ '(custom-safe-themes
+   '("3d2e532b010eeb2f5e09c79f0b3a277bfc268ca91a59cdda7ffd056b868a03bc" "c8b83e7692e77f3e2e46c08177b673da6e41b307805cd1982da9e2ea2e90e6d7" default))
+ '(frame-brackground-mode 'dark)
+ '(package-selected-packages
+   '(projectile auctex prettier company rjsx-mode tide web-mode yasnippet flycheck multiple-cursors mozc scss-mode magit gruber-darker-theme typescript-mode vue-mode company-lsp lsp-mode haskell-mode monokai-pro-theme smex)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 
 (provide 'init)
 ;;; init.el ends here
