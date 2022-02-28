@@ -43,7 +43,7 @@
    '("3d2e532b010eeb2f5e09c79f0b3a277bfc268ca91a59cdda7ffd056b868a03bc" "c8b83e7692e77f3e2e46c08177b673da6e41b307805cd1982da9e2ea2e90e6d7" default))
  '(frame-brackground-mode 'dark)
  '(package-selected-packages
-   '(auctex prettier company rjsx-mode tide web-mode yasnippet flycheck multiple-cursors mozc scss-mode magit gruber-darker-theme typescript-mode vue-mode company-lsp lsp-mode haskell-mode monokai-pro-theme smex)))
+   '(projectile auctex prettier company rjsx-mode tide web-mode yasnippet flycheck multiple-cursors mozc scss-mode magit gruber-darker-theme typescript-mode vue-mode company-lsp lsp-mode haskell-mode monokai-pro-theme smex)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -169,7 +169,7 @@
 (setq TeX-parse-self t)
 (setq-default TeX-master nil)
 
-;; Custom keybinding `C-0 b` for `\mathbb{}` on prev letter
+;; Custom keybinding `C-0 b` for `\mathbb{}` on prev letters
 (fset 'pit/mathbb
 (kmacro-lambda-form [?\C-b ?\\ ?m ?a ?t ?h ?b ?b ?\{ ?\C-f ?\}] 0 "%d"))
 (add-hook 'LaTeX-mode-hook
