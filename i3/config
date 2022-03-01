@@ -199,6 +199,7 @@ bindsym Print exec --no-startup-id maim -s | xclip -selection clipboard -t image
 bindsym $mod+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 
 focus_follows_mouse no
+mouse_warping none
 
 # Use fcitx
 exec --no-startup-id fcitx -d
