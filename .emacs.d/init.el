@@ -62,7 +62,22 @@
   :config
   (add-hook 'vue-mode-hook #'lsp))
 
-(use-package org)
+(defun efs/org-mode-setup()
+  (org-indent-mode)
+;;  (variable-pitch-mode 1)
+  (auto-fill-mode 0)
+  (visual-line-mode 0))
+
+(use-package org
+  :hook (org-mode . efs/org-mode-setup)
+  :config
+  (setq org-ellipsis " ▿"
+	org-hide-emphasis-markers t))
+(use-package org-bullets
+  :after org
+  :hook (org-mode . org-bullets-mode)
+  :custom
+  (org-bullets-bullet-list '("•" "◦")))
 
 (add-hook 'mmm-mode-hook
 	  (lambda ()
@@ -193,7 +208,7 @@
  '(ansi-color-names-vector
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(compilation-message-face 'default)
- '(custom-enabled-themes '(darkokai))
+ '(custom-enabled-themes '(gruber-darker))
  '(custom-safe-themes
    '("0cd00c17f9c1f408343ac77237efca1e4e335b84406e05221126a6ee7da28971" "3d2e532b010eeb2f5e09c79f0b3a277bfc268ca91a59cdda7ffd056b868a03bc" "c8b83e7692e77f3e2e46c08177b673da6e41b307805cd1982da9e2ea2e90e6d7" default))
  '(fci-rule-color "#323342")
@@ -210,7 +225,7 @@
      ("#323342" . 100)))
  '(magit-diff-use-overlays nil)
  '(package-selected-packages
-   '(projectile auctex prettier company rjsx-mode tide web-mode yasnippet flycheck multiple-cursors mozc scss-mode magit gruber-darker-theme typescript-mode vue-mode company-lsp lsp-mode haskell-mode monokai-pro-theme smex))
+   '(org-bullets projectile auctex prettier company rjsx-mode tide web-mode yasnippet flycheck multiple-cursors mozc scss-mode magit gruber-darker-theme typescript-mode vue-mode company-lsp lsp-mode haskell-mode monokai-pro-theme smex))
  '(pos-tip-background-color "#E6DB74")
  '(pos-tip-foreground-color "#242728")
  '(vc-annotate-background nil)
