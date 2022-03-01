@@ -183,6 +183,8 @@
 (use-package vue-mode)
 (use-package haskell-mode)
 
+(use-package darkokai-theme)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
