@@ -1,5 +1,8 @@
+;; Welcome to my emacs config
+;; It is very much cobbled together, hosted on github for personal use
+;; Use on your own machine at your own risk
 
-
+;;; Code:
 (require 'package)
 (setq package-archives
       '(("melpa" . "https://melpa.org/packages/")
@@ -43,8 +46,9 @@
 (put 'downcase-region 'disabled nil)
 
 (use-package lsp-mode
-  :ensure t
-  :commands lsp)
+  :commands lsp lsp-deferred
+  :init
+  (setq lsp-keymap-prefix "C-c l"))
 
 (require 'lsp-mode)
 
@@ -96,7 +100,11 @@
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 (use-package tide)
 (require 'tide)
-(use-package company)
+(use-package company
+  :custom
+  (company-minimum-prefix-length 1)
+  (company--idle-delay 0.0)
+)
 (require 'company)
 (use-package yasnippet)
 (require 'yasnippet)
@@ -182,12 +190,50 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
- '(custom-enabled-themes '(gruber-darker))
+ '(compilation-message-face 'default)
+ '(custom-enabled-themes '(darkokai))
  '(custom-safe-themes
-   '("3d2e532b010eeb2f5e09c79f0b3a277bfc268ca91a59cdda7ffd056b868a03bc" "c8b83e7692e77f3e2e46c08177b673da6e41b307805cd1982da9e2ea2e90e6d7" default))
+   '("0cd00c17f9c1f408343ac77237efca1e4e335b84406e05221126a6ee7da28971" "3d2e532b010eeb2f5e09c79f0b3a277bfc268ca91a59cdda7ffd056b868a03bc" "c8b83e7692e77f3e2e46c08177b673da6e41b307805cd1982da9e2ea2e90e6d7" default))
+ '(fci-rule-color "#323342")
  '(frame-brackground-mode 'dark)
+ '(highlight-changes-colors '("#ff8eff" "#ab7eff"))
+ '(highlight-tail-colors
+   '(("#323342" . 0)
+     ("#63de5d" . 20)
+     ("#4BBEAE" . 30)
+     ("#1DB4D0" . 50)
+     ("#9A8F21" . 60)
+     ("#A75B00" . 70)
+     ("#F309DF" . 85)
+     ("#323342" . 100)))
+ '(magit-diff-use-overlays nil)
  '(package-selected-packages
-   '(projectile auctex prettier company rjsx-mode tide web-mode yasnippet flycheck multiple-cursors mozc scss-mode magit gruber-darker-theme typescript-mode vue-mode company-lsp lsp-mode haskell-mode monokai-pro-theme smex)))
+   '(projectile auctex prettier company rjsx-mode tide web-mode yasnippet flycheck multiple-cursors mozc scss-mode magit gruber-darker-theme typescript-mode vue-mode company-lsp lsp-mode haskell-mode monokai-pro-theme smex))
+ '(pos-tip-background-color "#E6DB74")
+ '(pos-tip-foreground-color "#242728")
+ '(vc-annotate-background nil)
+ '(vc-annotate-color-map
+   '((20 . "#ff0066")
+     (40 . "#CF4F1F")
+     (60 . "#C26C0F")
+     (80 . "#E6DB74")
+     (100 . "#AB8C00")
+     (120 . "#A18F00")
+     (140 . "#989200")
+     (160 . "#8E9500")
+     (180 . "#63de5d")
+     (200 . "#729A1E")
+     (220 . "#609C3C")
+     (240 . "#4E9D5B")
+     (260 . "#3C9F79")
+     (280 . "#53f2dc")
+     (300 . "#299BA6")
+     (320 . "#2896B5")
+     (340 . "#2790C3")
+     (360 . "#06d8ff")))
+ '(vc-annotate-very-old-color nil)
+ '(weechat-color-list
+   (unspecified "#242728" "#323342" "#F70057" "#ff0066" "#86C30D" "#63de5d" "#BEB244" "#E6DB74" "#40CAE4" "#06d8ff" "#FF61FF" "#ff8eff" "#00b2ac" "#53f2dc" "#f8fbfc" "#ffffff")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
