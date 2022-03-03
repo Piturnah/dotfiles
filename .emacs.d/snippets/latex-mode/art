@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: article
+# key: \art
+# --
+\documentclass{article}
+
+\begin{document}
+
+$0
+
+\end{document}

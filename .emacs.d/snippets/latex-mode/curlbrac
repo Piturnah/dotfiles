@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: curlbrac
+# key: {
+# --
+\left\\{$0\right\\}

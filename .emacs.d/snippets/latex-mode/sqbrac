@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: sqbrac
+# key: [
+# --
+\left[$0\right]

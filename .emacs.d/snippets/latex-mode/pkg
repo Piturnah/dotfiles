@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: pkg
+# key: pkg
+# --
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathtools}

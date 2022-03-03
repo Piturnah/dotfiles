@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: reactElementWithClass
+# key: <.
+# --
+<${1:div} className={$2}>
+  $0
+</$1>

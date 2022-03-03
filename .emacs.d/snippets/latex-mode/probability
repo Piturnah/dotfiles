@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: probability
+# key: pr
+# --
+\mathbb{P}($1)$0

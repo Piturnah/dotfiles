@@ -31,6 +31,8 @@
 
 (setq display-line-numbers 'relative)
 
+(use-package rainbow-mode)
+
 (setq inhibit-startup-screen t)
 (menu-bar-mode 0)
 (tool-bar-mode 0)
@@ -62,14 +64,18 @@
   :config
   (add-hook 'vue-mode-hook #'lsp))
 
-(defun efs/org-mode-setup()
-  (org-indent-mode)
-;;  (variable-pitch-mode 1)
-  (auto-fill-mode 0)
-  (visual-line-mode 0))
+(setq display-line-numbers-type 'relative)
+(global-display-line-numbers-mode)
+
+(add-to-list 'load-path "~/.emacs.d/org/")
+(require 'org-variable-pitch)
+
+(defun pit/org-mode-setup()
+  (org-variable-pitch-minor-mode)
+  (display-line-numbers-mode 0))
 
 (use-package org
-  :hook (org-mode . efs/org-mode-setup)
+  :hook (org-mode . pit/org-mode-setup)
   :config
   (setq org-ellipsis " ▿"
 	org-hide-emphasis-markers t))
@@ -93,9 +99,6 @@
 (setq c-default-style "linux"
       c-basic-offset 4)
 
-(setq display-line-numbers-type 'relative)
-(global-display-line-numbers-mode)
-
 (use-package flycheck)
 (global-flycheck-mode)
 
@@ -118,8 +121,7 @@
 (use-package company
   :custom
   (company-minimum-prefix-length 1)
-  (company--idle-delay 0.0)
-)
+  (company--idle-delay 0.0))
 (require 'company)
 (use-package yasnippet)
 (require 'yasnippet)
@@ -212,7 +214,6 @@
  '(custom-safe-themes
    '("0cd00c17f9c1f408343ac77237efca1e4e335b84406e05221126a6ee7da28971" "3d2e532b010eeb2f5e09c79f0b3a277bfc268ca91a59cdda7ffd056b868a03bc" "c8b83e7692e77f3e2e46c08177b673da6e41b307805cd1982da9e2ea2e90e6d7" default))
  '(fci-rule-color "#323342")
- '(frame-brackground-mode 'dark)
  '(highlight-changes-colors '("#ff8eff" "#ab7eff"))
  '(highlight-tail-colors
    '(("#323342" . 0)
@@ -225,7 +226,7 @@
      ("#323342" . 100)))
  '(magit-diff-use-overlays nil)
  '(package-selected-packages
-   '(org-bullets projectile auctex prettier company rjsx-mode tide web-mode yasnippet flycheck multiple-cursors mozc scss-mode magit gruber-darker-theme typescript-mode vue-mode company-lsp lsp-mode haskell-mode monokai-pro-theme smex))
+   '(general rainbow-mode org-bullets projectile auctex prettier company rjsx-mode tide web-mode yasnippet flycheck multiple-cursors mozc scss-mode magit gruber-darker-theme typescript-mode vue-mode company-lsp lsp-mode haskell-mode monokai-pro-theme smex))
  '(pos-tip-background-color "#E6DB74")
  '(pos-tip-foreground-color "#242728")
  '(vc-annotate-background nil)
