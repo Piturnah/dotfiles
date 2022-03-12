@@ -31,6 +31,24 @@
 
 (setq display-line-numbers 'relative)
 
+;;(use-package rustic
+;;  :bind (:map rustic-mode-map
+;;	      ("M-j" . lsp-ui-imenu)
+;;              ("M-?" . lsp-find-references)
+;;              ("C-c C-c l" . flycheck-list-errors)
+;;              ("C-c C-c r" . lsp-rename))
+;;  :config
+;;  (setq rustic-format-on-save t))
+;;
+;;(use-package lsp-mode
+;;  :commands lsp)
+;;
+;;(use-package lsp-ui
+;;  :commands lsp-ui-mode)
+;;  (lsp-ui-peek-always-show nil)
+;;  (lsp-ui-sideline-show-hover t)
+;;  (lsp-ui-doc-enable-nil))
+
 (use-package rainbow-mode)
 
 (setq inhibit-startup-screen t)
@@ -46,11 +64,6 @@
 
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 (put 'downcase-region 'disabled nil)
-
-(use-package lsp-mode
-  :commands lsp lsp-deferred
-  :init
-  (setq lsp-keymap-prefix "C-c l"))
 
 (require 'lsp-mode)
 
@@ -69,6 +82,8 @@
 
 (add-to-list 'load-path "~/.emacs.d/org/")
 (require 'org-variable-pitch)
+(add-to-list 'load-path "~/.emacs.d/fodder")
+(require 'fodder-theme)
 
 (defun pit/org-mode-setup()
   (org-variable-pitch-minor-mode)
@@ -210,10 +225,11 @@
  '(ansi-color-names-vector
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(compilation-message-face 'default)
- '(custom-enabled-themes '(gruber-darker))
+ '(custom-enabled-themes '(fodder))
  '(custom-safe-themes
-   '("0cd00c17f9c1f408343ac77237efca1e4e335b84406e05221126a6ee7da28971" "3d2e532b010eeb2f5e09c79f0b3a277bfc268ca91a59cdda7ffd056b868a03bc" "c8b83e7692e77f3e2e46c08177b673da6e41b307805cd1982da9e2ea2e90e6d7" default))
+   '("94bf3521824de75820b9e730eda5b45287e7b33a32ffaf0f2b9ab6365687b8a3" "0cd00c17f9c1f408343ac77237efca1e4e335b84406e05221126a6ee7da28971" "3d2e532b010eeb2f5e09c79f0b3a277bfc268ca91a59cdda7ffd056b868a03bc" "c8b83e7692e77f3e2e46c08177b673da6e41b307805cd1982da9e2ea2e90e6d7" default))
  '(fci-rule-color "#323342")
+ '(frame-brackground-mode 'dark)
  '(highlight-changes-colors '("#ff8eff" "#ab7eff"))
  '(highlight-tail-colors
    '(("#323342" . 0)
@@ -226,7 +242,7 @@
      ("#323342" . 100)))
  '(magit-diff-use-overlays nil)
  '(package-selected-packages
-   '(general rainbow-mode org-bullets projectile auctex prettier company rjsx-mode tide web-mode yasnippet flycheck multiple-cursors mozc scss-mode magit gruber-darker-theme typescript-mode vue-mode company-lsp lsp-mode haskell-mode monokai-pro-theme smex))
+   '(lsp-ui rustic rust-mode general rainbow-mode org-bullets projectile auctex prettier company rjsx-mode tide web-mode yasnippet flycheck multiple-cursors mozc scss-mode magit gruber-darker-theme typescript-mode vue-mode company-lsp lsp-mode haskell-mode monokai-pro-theme smex))
  '(pos-tip-background-color "#E6DB74")
  '(pos-tip-foreground-color "#242728")
  '(vc-annotate-background nil)
