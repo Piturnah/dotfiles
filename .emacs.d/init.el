@@ -50,6 +50,7 @@
 ;;  (lsp-ui-doc-enable-nil))
 
 (use-package rainbow-mode)
+(use-package projectile)
 
 (setq inhibit-startup-screen t)
 (menu-bar-mode 0)
@@ -65,7 +66,22 @@
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 (put 'downcase-region 'disabled nil)
 
-(require 'lsp-mode)
+;; --------------------------------------------------------------------------------
+;; v Disabled for now, refer to https://github.com/elizagamedev/unity.el/issues/6 v
+;; --------------------------------------------------------------------------------
+
+;; (setenv "FrameworkPathOverride" "/lib/mono/4.5")
+;; (add-to-list 'load-path "~/.emacs.d/unity.el/")
+;; (require 'unity)
+;; (add-hook 'after-init-hook #'unity-build-code-shim)
+;; (add-hook 'after-init-hook #'unity-setup)
+;; (require 'lsp-mode)
+;; (use-package csharp-mode
+;;   :init
+;;   (defun pit/csharp-mode-hook ()
+;;     (setq-local lsp-auto-guess-root t)
+;;     (lsp))
+;;   (add-hook 'csharp-mode-hook #'pit/csharp-mode-hook))
 
 ;; for completions
 ;;(use-package company-lsp
@@ -242,7 +258,7 @@
      ("#323342" . 100)))
  '(magit-diff-use-overlays nil)
  '(package-selected-packages
-   '(lsp-ui rustic rust-mode general rainbow-mode org-bullets projectile auctex prettier company rjsx-mode tide web-mode yasnippet flycheck multiple-cursors mozc scss-mode magit gruber-darker-theme typescript-mode vue-mode company-lsp lsp-mode haskell-mode monokai-pro-theme smex))
+   '(csharp-mode lsp-ui rustic rust-mode general rainbow-mode org-bullets projectile auctex prettier company rjsx-mode tide web-mode yasnippet flycheck multiple-cursors mozc scss-mode magit gruber-darker-theme typescript-mode vue-mode company-lsp lsp-mode haskell-mode monokai-pro-theme smex))
  '(pos-tip-background-color "#E6DB74")
  '(pos-tip-foreground-color "#242728")
  '(vc-annotate-background nil)

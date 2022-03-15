@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: braces
+# key: {
+# --
+{
+    $0
+}
