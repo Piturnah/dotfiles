@@ -141,6 +141,8 @@
 ;; auto revert files on change
 (global-auto-revert-mode t)
 
+(show-paren-mode t)
+
 ;; non-verbose dired auto revert
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
