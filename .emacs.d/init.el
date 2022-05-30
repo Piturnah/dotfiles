@@ -211,6 +211,7 @@
 
 (add-hook 'typescript-mode-hook 'prettier-mode)
 (add-hook 'scss-mode-hook 'prettier-mode)
+(add-hook 'markdown-mode-hook 'prettier-mode)
 
 ;; AUCTeX
 (use-package tex
