@@ -252,9 +252,9 @@
  '(ansi-color-names-vector
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(compilation-message-face 'default)
- '(custom-enabled-themes '(gruvbox))
+ '(custom-enabled-themes '(tango))
  '(custom-safe-themes
-   '("d14f3df28603e9517eb8fb7518b662d653b25b26e83bd8e129acea042b774298" "83e0376b5df8d6a3fbdfffb9fb0e8cf41a11799d9471293a810deb7586c131e6" "7661b762556018a44a29477b84757994d8386d6edee909409fabe0631952dad9" "6b5c518d1c250a8ce17463b7e435e9e20faa84f3f7defba8b579d4f5925f60c1" "94bf3521824de75820b9e730eda5b45287e7b33a32ffaf0f2b9ab6365687b8a3" "0cd00c17f9c1f408343ac77237efca1e4e335b84406e05221126a6ee7da28971" "3d2e532b010eeb2f5e09c79f0b3a277bfc268ca91a59cdda7ffd056b868a03bc" "c8b83e7692e77f3e2e46c08177b673da6e41b307805cd1982da9e2ea2e90e6d7" default))
+   '("70936e3b54ca6d668354fdc87eea5f0a5129380c0c459598be943efba6ae1563" "bfac9f5b962572739db905a07a2d8d32b25258cd67826727d354013b63d8529e" "d14f3df28603e9517eb8fb7518b662d653b25b26e83bd8e129acea042b774298" "83e0376b5df8d6a3fbdfffb9fb0e8cf41a11799d9471293a810deb7586c131e6" "7661b762556018a44a29477b84757994d8386d6edee909409fabe0631952dad9" "6b5c518d1c250a8ce17463b7e435e9e20faa84f3f7defba8b579d4f5925f60c1" "94bf3521824de75820b9e730eda5b45287e7b33a32ffaf0f2b9ab6365687b8a3" "0cd00c17f9c1f408343ac77237efca1e4e335b84406e05221126a6ee7da28971" "3d2e532b010eeb2f5e09c79f0b3a277bfc268ca91a59cdda7ffd056b868a03bc" "c8b83e7692e77f3e2e46c08177b673da6e41b307805cd1982da9e2ea2e90e6d7" default))
  '(fci-rule-color "#323342")
  '(frame-brackground-mode 'dark)
  '(highlight-changes-colors '("#ff8eff" "#ab7eff"))
@@ -269,7 +269,7 @@
      ("#323342" . 100)))
  '(magit-diff-use-overlays nil)
  '(package-selected-packages
-   '(mentor latex-pretty-symbols pretty-mode gruvbox-theme csharp-mode lsp-ui rustic rust-mode general rainbow-mode org-bullets projectile auctex prettier company rjsx-mode tide web-mode yasnippet flycheck multiple-cursors mozc scss-mode magit gruber-darker-theme typescript-mode vue-mode company-lsp lsp-mode haskell-mode monokai-pro-theme smex))
+   '(lavender-theme shades-of-purple-theme mentor latex-pretty-symbols pretty-mode gruvbox-theme csharp-mode lsp-ui rustic rust-mode general rainbow-mode org-bullets projectile auctex prettier company rjsx-mode tide web-mode yasnippet flycheck multiple-cursors mozc scss-mode magit gruber-darker-theme typescript-mode vue-mode company-lsp lsp-mode haskell-mode monokai-pro-theme smex))
  '(pdf-view-midnight-colors '("#fdf4c1" . "#1d2021"))
  '(pos-tip-background-color "#E6DB74")
  '(pos-tip-foreground-color "#242728")
