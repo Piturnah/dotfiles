@@ -84,6 +84,8 @@
 ;;     (lsp))
 ;;   (add-hook 'csharp-mode-hook #'pit/csharp-mode-hook))
 
+(use-package csharp-mode)
+
 ;; for completions
 ;;(use-package company-lsp
 ;;  :after lsp-mode
