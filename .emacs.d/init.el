@@ -103,6 +103,8 @@
 (require 'org-variable-pitch)
 (add-to-list 'load-path "~/.emacs.d/fodder")
 (require 'fodder-theme)
+(add-to-list 'load-path "~/.emacs.d/custom-lang-modes")
+(require 'noq-mode)
 
 (defun pit/org-mode-setup()
   (org-variable-pitch-minor-mode))
