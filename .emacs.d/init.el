@@ -51,6 +51,7 @@
 
 (use-package rainbow-mode)
 (use-package projectile)
+(use-package yaml-mode)
 
 (setq inhibit-startup-screen t)
 (menu-bar-mode 0)
