@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: hello world
+# key: h
+# --
+#include <stdio.h>
+
+int main()
+{
+    printf("hello, world!\n");
+}

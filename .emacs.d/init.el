@@ -287,7 +287,7 @@
   (global-ligature-mode t))
 
 ;;(set-frame-font "Fira Code 10")
-(set-frame-font "JetBrains Mono 10")
+;;(set-frame-font "JetBrains Mono 10")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

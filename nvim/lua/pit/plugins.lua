@@ -32,12 +32,14 @@ end
 
 return packer.startup(function(use)
   use "wbthomason/packer.nvim"
+  use "https://github.com/nvim-lua/plenary.nvim"
   use "neovim/nvim-lspconfig"
   use { "ms-jpq/coq_nvim", event = "VimEnter", config = "vim.cmd[[COQnow]]" }
   use { "ms-jpq/coq.artifacts", branch = "artifacts" }
-  use "jiangmiao/auto-pairs"
   use "gruvbox-community/gruvbox"
   use { "iamcco/markdown-preview.nvim", run = "cd app && npm install", cmd = "MarkdownPreview" }
+  use "https://github.com/vim-airline/vim-airline"
+  use { "https://github.com/nvim-telescope/telescope.nvim", branch = "0.1.x" }
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
