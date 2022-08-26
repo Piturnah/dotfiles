@@ -201,7 +201,7 @@ exec_always --no-startup-id compton
 
 # Screenshots
 bindsym Ctrl+Print exec --no-startup-id maim ~/Pictures/"$(date).png"
-bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$( date '+%F_%H:%M:%S' ).png"
 
 
 # Clipboard Screenshots
