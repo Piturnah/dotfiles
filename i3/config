@@ -214,6 +214,9 @@ mouse_warping none
 # Use fcitx
 exec --no-startup-id fcitx -d
 
+# setxkbmap
+exec_always --no-startup-id setxkbmap -option caps:swapescape
+
 set $tx     #040404
 set $ia     #8f8f8f
 
