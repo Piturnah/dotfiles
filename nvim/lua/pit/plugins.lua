@@ -40,6 +40,7 @@ return packer.startup(function(use)
   use { "iamcco/markdown-preview.nvim", run = "cd app && npm install", cmd = "MarkdownPreview" }
   use "https://github.com/vim-airline/vim-airline"
   use { "https://github.com/nvim-telescope/telescope.nvim", branch = "0.1.x" }
+  use { "https://github.com/RRethy/nvim-align" }
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
