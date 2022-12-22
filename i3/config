@@ -45,15 +45,18 @@ bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U 5
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# polybar
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+#bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
-# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+bindsym $mod+d exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -263,3 +266,10 @@ bar {
     }
 }
 
+# Battery warning
+exec --no-startup-id ~/dotfiles/i3-battery-popup/i3-battery-popup -n -D -L 15 -l 5
+
+# Gaps
+for_window [class=".*"] border pixel 0
+#smart_gaps off
+#gaps inner 4
