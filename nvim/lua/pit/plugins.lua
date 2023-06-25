@@ -35,13 +35,28 @@ return packer.startup(function(use)
   use "https://github.com/nvim-lua/plenary.nvim"
   use "neovim/nvim-lspconfig"
   --use { "ms-jpq/coq_nvim", event = "VimEnter", config = "vim.cmd[[COQnow]]" }
-  use { "ms-jpq/coq.artifacts", branch = "artifacts" }
+  --use { "ms-jpq/coq.artifacts", branch = "artifacts" }
   use "gruvbox-community/gruvbox"
-  use { "iamcco/markdown-preview.nvim", run = "cd app && npm install", cmd = "MarkdownPreview" }
   use "https://github.com/vim-airline/vim-airline"
   use { "https://github.com/nvim-telescope/telescope.nvim", branch = "0.1.x" }
-  use { "https://github.com/RRethy/nvim-align" }
-  use { "neoclide/coc.nvim", branch = "release" }
+  use "https://github.com/RRethy/nvim-align"
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+  use "simrat39/rust-tools.nvim"
+  
+  -- Completion framework:
+  use 'hrsh7th/nvim-cmp' 
+  -- LSP completion source:
+  use 'hrsh7th/cmp-nvim-lsp'
+  -- Useful completion sources:
+  use 'hrsh7th/cmp-nvim-lua'
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
+  use 'hrsh7th/cmp-vsnip'                             
+  use 'hrsh7th/cmp-path'                              
+  use 'hrsh7th/cmp-buffer'                            
+  use 'hrsh7th/vim-vsnip'                             
+
+  use "windwp/nvim-ts-autotag"
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
