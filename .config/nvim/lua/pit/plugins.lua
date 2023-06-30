@@ -56,6 +56,7 @@ return packer.startup(function(use)
   use 'hrsh7th/vim-vsnip'                             
 
   use "windwp/nvim-ts-autotag"
+  use "mattn/emmet-vim"
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

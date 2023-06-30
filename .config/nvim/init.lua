@@ -13,7 +13,6 @@ require "lspconfig".hls.setup{}
 require "lspconfig".clangd.setup{}
 require "lspconfig".tsserver.setup{}
 
-
 require "rust-tools".setup{}
 
 vim.api.nvim_create_autocmd(
