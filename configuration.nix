@@ -51,6 +51,8 @@ in
     git
     htop
     neofetch
+    onefetch
+    tokei
     tree
     wget
     wl-clipboard
@@ -62,6 +64,7 @@ in
     # Apps
     chromium
     discord
+    slack
 
     # Games
     freesweep
@@ -69,7 +72,6 @@ in
     # Lib
     gcc_multi
     libiconv
-    # openssl_legacy
     pkg-config
 
     # Desktop
@@ -95,11 +97,6 @@ in
     noto-fonts-cjk
   ];
 
-  i18n.inputMethod = {
-    enabled = "ibus";
-    ibus.engines = with pkgs.ibus-engines; [ mozc ];
-  };
-
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -117,11 +114,7 @@ in
     enable = true;
     wrapperFeatures.gtk = true;
     extraSessionCommands = ''
-      export INPUT_METHOD=ibus
-      export QT_IM_MODULE=ibus
-      export GTK_IM_MODULE=ibus
-      export XMODIFIERS=@im=ibus
-      export XIM_SERVERS=ibus
+      export PATH=$HOME/.cargo/bin:$PATH
     '';
   };
 
