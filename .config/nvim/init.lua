@@ -1,8 +1,3 @@
--- NOTE: This config has a dependency on 
--- `python3-venv` and `sqlite3 from the COQ 
--- plugin.
---
--- Then run :COQdeps after initial restart.
 require "pit.options"
 require "pit.keymaps"
 require "pit.plugins"
@@ -12,6 +7,7 @@ require "lspconfig".rust_analyzer.setup{}
 require "lspconfig".hls.setup{}
 require "lspconfig".clangd.setup{}
 require "lspconfig".tsserver.setup{}
+require "lspconfig".vuels.setup{}
 
 require "rust-tools".setup{}
 
