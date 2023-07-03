@@ -228,7 +228,7 @@ exec --no-startup-id fcitx -d
 # setxkbmap
 exec_always --no-startup-id setxkbmap -option caps:swapescape
 
-exec_always --no-startup-id eval "$(zoxide init bash --cmd cd)"
+#exec_always --no-startup-id eval "$(zoxide init bash --cmd cd)"
 
 set $tx     #040404
 set $ia     #8f8f8f

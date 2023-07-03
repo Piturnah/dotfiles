@@ -113,9 +113,9 @@ in
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
-    extraSessionCommands = ''
-      export PATH=$HOME/.cargo/bin:$PATH
-    '';
+#    extraSessionCommands = ''
+#      export PATH=$HOME/.cargo/bin:$PATH
+#    '';
   };
 
   imports =
