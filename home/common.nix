@@ -20,6 +20,7 @@
     ls = "exa";
     cat = "bat";
     t = "tree --gitignore";
+    g = "gex";
   };
 
   home.sessionPath = [
