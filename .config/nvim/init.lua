@@ -117,3 +117,26 @@ cmp.setup({
       end,
   },
 })
+
+-- Neotree
+require("neo-tree").setup({
+  close_if_last_window = true,
+  hide_gitignored = false,
+  window = {
+    mappings = {
+      ["<bs>"] = "navigate_up",
+      ["."] = "set_root",
+      ["H"] = "toggle_hidden",
+      ["/"] = "fuzzy_finder",
+      ["D"] = "fuzzy_finder_directory",
+      ["#"] = "fuzzy_sorter", -- fuzzy sorting using the fzy algorithm
+      -- ["D"] = "fuzzy_sorter_directory",
+      ["f"] = "filter_on_submit",
+      ["<c-x>"] = "clear_filter",
+      ["[g"] = "prev_git_modified",
+      ["]g"] = "next_git_modified",
+    }
+  }
+})
+
+vim.cmd([[nnoremap \ :Neotree toggle reveal_force_cwd<cr>]])

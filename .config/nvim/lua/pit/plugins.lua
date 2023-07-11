@@ -29,6 +29,7 @@ if not status_ok then
   vim.notify("packer couldn't be required")
   return
 end
+vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 return packer.startup(function(use)
   use "wbthomason/packer.nvim"
@@ -58,6 +59,17 @@ return packer.startup(function(use)
   use "windwp/nvim-ts-autotag"
   use "mattn/emmet-vim"
 
+
+  use {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    requires = { 
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    },
+  }
+  
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end

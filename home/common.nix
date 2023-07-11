@@ -80,8 +80,6 @@
     fcitx5.addons = with pkgs; [ fcitx5-mozc ];
   };
 
-  fonts.fontconfig.enable = true;
-
   home.packages = with pkgs; [
     cbonsai
     cmatrix
@@ -103,7 +101,7 @@
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "Iosevka" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "Iosevka" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
