@@ -21,6 +21,7 @@
     cat = "bat";
     t = "tree --gitignore";
     g = "gex";
+    c = "clear";
   };
 
   home.sessionPath = [
