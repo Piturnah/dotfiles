@@ -17,11 +17,12 @@
 
   home.shellAliases = {
     cd = "z";
-    ls = "exa";
+    ls = "exa --group-directories-first";
     cat = "bat";
     t = "tree --gitignore";
     g = "gex";
     c = "clear";
+    neofetch = "neofetch --ascii ~/.config/neofetch/logo";
   };
 
   home.sessionPath = [

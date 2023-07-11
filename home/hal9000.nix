@@ -21,5 +21,6 @@
 
   home.file = {
     ".config/sway".source = .config/sway;
+    ".config/neofetch/logo".source = .config/neofetch/logo;
   };
 }
