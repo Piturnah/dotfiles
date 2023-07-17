@@ -106,9 +106,6 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+q layout toggle split
 
-bindsym $mod+e exec --no-startup-id emacs
-bindsym $mod+g exec --no-startup-id firefox
-
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
@@ -206,13 +203,9 @@ bindsym XF86AudioPrev exec playerctl previous
 # Wallpaper
 exec_always swaybg -i ~/Pictures/wallpaper.jpeg
 
-# Compton
-exec_always --no-startup-id compton
-
 # Screenshots
 bindsym Ctrl+Print exec --no-startup-id maim ~/Pictures/"$(date).png"
 bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$( date '+%F_%H:%M:%S' ).png"
-
 
 # Clipboard Screenshots
 bindsym Print exec --no-startup-id grim -g "$(slurp)" - | wl-copy 
@@ -222,11 +215,9 @@ bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow)
 focus_follows_mouse no
 mouse_warping none
 
+# TODO: which fcitx is working? this one or one in bashrc? investigate
 # Use fcitx
 exec --no-startup-id fcitx -d
-
-# setxkbmap
-exec_always --no-startup-id setxkbmap -option caps:swapescape
 
 #exec_always --no-startup-id eval "$(zoxide init bash --cmd cd)"
 
