@@ -140,3 +140,9 @@ require("neo-tree").setup({
 })
 
 vim.cmd([[nnoremap \ :Neotree toggle reveal_force_cwd<cr>]])
+
+vim.cmd([[nnoremap j gj]])
+vim.cmd([[nnoremap k gk]])
+vim.cmd([[nnoremap gj j]])
+vim.cmd([[nnoremap gk k]])
+vim.cmd([[nnoremap k gk]])
