@@ -72,6 +72,7 @@ in
     # Lib
     gcc_multi
     libiconv
+    openssl
     pkg-config
 
     # Desktop
@@ -159,6 +160,7 @@ in
   services.xserver = {
     layout = "gb";
     xkbVariant = "";
+    xkbOptions = "caps:swapescape";
   };
 
   # Configure console keymap
