@@ -31,7 +31,10 @@
 
   programs.bash = {
     enable = true;
-    bashrcExtra = "eval \"$(zoxide init bash)\"";
+    bashrcExtra = lib.concatStrings [
+      "eval \"$(zoxide init bash)\"\n"
+      "set -o vi"
+    ];
     profileExtra = "fcitx5 -d";
   };
 
@@ -87,12 +90,14 @@
     cmatrix
     exa
     file
+    gimp
     git
     htop
     neofetch
     onefetch
     tokei
     tree
+    tmux
     wget
     wl-clipboard
     ripgrep
@@ -111,6 +116,7 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    spotify
   ];
 
   # You can also manage environment variables but you will have to manually
