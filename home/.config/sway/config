@@ -221,38 +221,54 @@ exec --no-startup-id fcitx -d
 
 #exec_always --no-startup-id eval "$(zoxide init bash --cmd cd)"
 
-set $tx     #040404
-set $ia     #8f8f8f
+# set $tx     #040404
+# set $ia     #8f8f8f
 
 # gruvbox dark cols
-set $gd-fg        #e4e4ef
-set $gd-fg+1      #f4f4ff
-set $gd-fg+2      #f5f5f5
-set $gd-white     #282828
-set $gd-black     #000000
-set $gd-bg-1      #101010
-set $gd-bg        #181818
-set $gd-bg+1      #282828
-set $gd-bg+2      #453d41
-set $gd-bg+3      #484848
-set $gd-bg+4      #52494e
-set $gd-red-1     #c73c3f
-set $gd-red       #f43841
-set $gd-red+1     #ff4f58
-set $gd-green     #73c936
-set $gd-yellow    #fabd2f
-set $gd-brown     #cc8c3c
-set $gd-quartz    #95a99f
-set $gd-niagara-2 #928374
-set $gd-niagara-1 #565f73
-set $gd-niagara   #96a6c8
-set $gd-wisteria  #9e95c7
+
+# hard contrast: background = '0x1d2021'
+set $background   #282828
+set $background_d #1d2021
+# soft contrast: background = '0x32302f'
+set $foreground #ebdbb2
+
+set $black    #282828
+set $red      #cc241d
+set $green    #98971a
+set $yellow   #d79921
+set $blue     #458588
+set $magenta  #b16286
+set $cyan     #689d6a
+set $white    #a89984
+set $orange   #fe8019
+# set $gd-fg        #e4e4ef
+# set $gd-fg+1      #f4f4ff
+# set $gd-fg+2      #f5f5f5
+# set $gd-white     #282828
+# set $gd-black     #000000
+# set $gd-bg-1      #101010
+# set $gd-bg        #181818
+# set $gd-bg+1      #282828
+# set $gd-bg+2      #453d41
+# set $gd-bg+3      #484848
+# set $gd-bg+4      #52494e
+# set $gd-red-1     #c73c3f
+# set $gd-red       #f43841
+# set $gd-red+1     #ff4f58
+# set $gd-green     #73c936
+# set $gd-yellow    #fabd2f
+# set $gd-brown     #cc8c3c
+# set $gd-quartz    #95a99f
+# set $gd-niagara-2 #928374
+# set $gd-niagara-1 #565f73
+# set $gd-niagara   #96a6c8
+# set $gd-wisteria  #9e95c7
 
 # set some nice colors      border		background		text		indicator
-client.focused              $gd-niagara-2	$gd-niagara-2         	$gd-white	$gd-brown
-client.unfocused            $gd-bg-1        	$gd-bg-1         	$ia
-client.focused_inactive     $gd-bg-1        	$gd-bg-1         	$gd-niagara-1
-client.urgent               $gd-red     	$gd-red         	$tx
+client.focused              $foreground         $foreground             $background     $yellow
+client.unfocused            $background        	$background         	$white
+# client.focused_inactive     $gd-bg-1        	$gd-bg-1                $gd-niagara-1
+client.urgent               $red     	        $red         	        $foreground
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -260,10 +276,10 @@ bar {
         status_command i3status -c ~/.config/sway/i3status.conf
 
 	colors {
-                background          $gd-bg-1
-                statusline          $gd-fg
-                focused_workspace   $gd-niagara-1        $gd-niagara-1		$tx
-	        urgent_workspace    $gd-white        	 $gd-red               	$gd-white
+                background          $background
+                statusline          $foreground
+                focused_workspace   $white               $white		$background
+	        urgent_workspace    $red        	 $red           $foreground
     }
 }
 
@@ -271,6 +287,7 @@ bar {
 exec --no-startup-id ~/dotfiles/i3-battery-popup/i3-battery-popup -n -D -L 15 -l 5
 
 # Gaps
-for_window [class=".*"] border pixel 0
-#smart_gaps off
-#gaps inner 4
+default_border none
+for_window [class=".*"] border pixel 1
+# smart_gaps on
+# gaps inner 4
