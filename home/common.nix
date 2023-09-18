@@ -23,6 +23,8 @@
     g = "gex";
     c = "clear";
     neofetch = "neofetch --ascii ~/.config/neofetch/logo";
+    vi = "nvim";
+    vim = "nvim";
   };
 
   home.sessionPath = [
@@ -50,6 +52,10 @@
       init.defaultBranch = "main";
       credential.helper = "store";
     };
+    # delta = {
+    #   enable = true;
+    #   options.features = "gruvbox-dark";
+    # };
   };
 
   programs.kitty = lib.mkDefault {
@@ -84,10 +90,12 @@
     fcitx5.addons = with pkgs; [ fcitx5-mozc ];
   };
 
+  fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     cbonsai
     cmatrix
     exa
+    fd
     file
     gcc
     gimp

@@ -16,6 +16,11 @@ let
     systemctl --user stop pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
     systemctl --user start pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
     '';
+    # text = ''
+    # dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+    # systemctl --user stop pipewire pipewire-media-session
+    # systemctl --user start pipewire pipewire-media-session
+    # '';
   };
 
   # https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland
@@ -35,6 +40,8 @@ let
 
 in
 {
+  boot.extraModulePackages = with config.boot.kernelPackages; [ perf ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -52,6 +59,7 @@ in
     htop
     neofetch
     onefetch
+    light
     tokei
     tree
     wget
@@ -194,7 +202,7 @@ in
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 8448 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
