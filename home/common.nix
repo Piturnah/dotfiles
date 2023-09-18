@@ -32,8 +32,7 @@
   programs.bash = {
     enable = true;
     bashrcExtra = lib.concatStrings [
-      "eval \"$(zoxide init bash)\"\n"
-      "set -o vi"
+      "eval \"$(zoxide init bash)\""
     ];
     profileExtra = "fcitx5 -d";
   };
