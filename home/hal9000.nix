@@ -11,6 +11,7 @@
   programs.rofi.font = "Iosevka 16";
 
   programs.swaylock.enable = true;
+  services.poweralertd.enable = true;
 
   programs.obs-studio = {
     enable = true;
@@ -23,4 +24,9 @@
     ".config/sway".source = .config/sway;
     ".config/neofetch/logo".source = .config/neofetch/logo;
   };
+
+  home.packages = with pkgs; [
+    qbittorrent
+    vlc
+  ];
 }
