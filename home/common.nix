@@ -89,13 +89,17 @@
     cmatrix
     exa
     file
+    gcc
     gimp
     git
     htop
     neofetch
+    neovim
     onefetch
+    rustup
     tokei
     tree
+    tree-sitter
     tmux
     wget
     wl-clipboard
