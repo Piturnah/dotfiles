@@ -33,5 +33,6 @@
     thunderbird
     vlc
     libreoffice-qt
+    solaar
   ];
 }
