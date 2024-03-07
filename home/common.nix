@@ -17,7 +17,7 @@
 
   home.shellAliases = {
     cd = "z";
-    ls = "exa --group-directories-first";
+    ls = "eza --group-directories-first";
     cat = "bat";
     t = "tree --gitignore";
     g = "gex";
@@ -94,13 +94,14 @@
   home.packages = with pkgs; [
     cbonsai
     cmatrix
-    exa
+    eza
     fd
     file
     gcc
     gimp
     git
     htop
+    killall
     neofetch
     neovim
     onefetch

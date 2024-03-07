@@ -26,7 +26,12 @@
   };
 
   home.packages = with pkgs; [
+    anki
+    emacs
+    firefox
     qbittorrent
+    thunderbird
     vlc
+    libreoffice-qt
   ];
 }

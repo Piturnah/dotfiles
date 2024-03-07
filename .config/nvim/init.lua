@@ -8,6 +8,8 @@ require "lspconfig".hls.setup{}
 require "lspconfig".clangd.setup{}
 require "lspconfig".tsserver.setup{}
 require "lspconfig".vuels.setup{}
+require'lspconfig'.texlab.setup{}
+require'lspconfig'.svelte.setup{}
 
 require "rust-tools".setup{}
 
