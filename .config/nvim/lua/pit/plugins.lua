@@ -59,6 +59,7 @@ return packer.startup(function(use)
   use "windwp/nvim-ts-autotag"
   use "mattn/emmet-vim"
 
+  use "SirVer/ultisnips"
 
   use {
     "nvim-neo-tree/neo-tree.nvim",
@@ -72,6 +73,7 @@ return packer.startup(function(use)
 
   use { 
       "nvim-neorg/neorg",
+      tag = "v7.0.0", -- Pin Neorg to the latest stable release
       config = function()
           require("neorg").setup {
               load = {
@@ -88,9 +90,9 @@ return packer.startup(function(use)
               },
           }
       end,
-      run = ":Neorg sync-parsers",
-      requires = "nvim-lua/plenary.nvim",
   }
+
+  use "derekelkins/agda-vim"
   
   if PACKER_BOOTSTRAP then
     require("packer").sync()
