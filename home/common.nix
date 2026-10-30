@@ -22,7 +22,7 @@
     t = "tree --gitignore";
     g = "gex";
     c = "clear";
-    neofetch = "neofetch --ascii ~/.config/neofetch/logo";
+    neofetch = "neowofetch --ascii ~/.config/neofetch/logo";
     vi = "nvim";
     vim = "nvim";
   };
@@ -62,9 +62,9 @@
     enable = true;
     font = {
       name = "Iosevka";
-      size = 14;
+      size = 14.0;
     };
-    theme = "Gruvbox Dark";
+    themeFile = "gruvbox-dark";
     settings = {
       enable_audio_bell = false;
       confirm_os_window_close = 0;
@@ -102,7 +102,7 @@
     git
     htop
     killall
-    neofetch
+    hyfetch
     neovim
     onefetch
     rustup
@@ -120,16 +120,9 @@
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    (pkgs.nerdfonts.override { fonts = [ "Iosevka" ]; })
+    #(pkgs.nerdfonts.override { fonts = [ "Iosevka" ]; })
+    pkgs.nerd-fonts.iosevka
     noto-fonts-cjk-sans
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
-    spotify
   ];
 
   # You can also manage environment variables but you will have to manually
