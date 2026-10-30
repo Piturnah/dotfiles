@@ -33,8 +33,9 @@
 
   programs.bash = {
     enable = true;
-    bashrcExtra = lib.concatStrings [
+    bashrcExtra = lib.concatStringsSep "\n" [
       "eval \"$(zoxide init bash)\""
+      "fortune | cowsay"
     ];
     profileExtra = "fcitx5 -d";
   };
@@ -123,6 +124,10 @@
     #(pkgs.nerdfonts.override { fonts = [ "Iosevka" ]; })
     pkgs.nerd-fonts.iosevka
     noto-fonts-cjk-sans
+
+    # Fun stuff
+    cowsay
+    fortune
   ];
 
   # You can also manage environment variables but you will have to manually
